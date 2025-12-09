@@ -1,0 +1,26 @@
+{
+  "name": "charles_melvin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss/main.scss:css/main.css",
+    "sass:watch": "sass --watch scss/main.scss:css/main.css",
+    "build": "sass scss/main.scss:css/main.css --style compressed",
+    "server": "http-server -p 8080 -c-1",
+    "dev": "browser-sync start --server --files \"css/*.css, *.html, js/*.js, components/*.html, pages/*.html\" --browser \"brave\"",
+    "start": "npm-run-all --parallel sass:watch dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.86.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "http-server": "^14.1.1",
+    "npm-run-all": "^4.1.5"
+  }
+}

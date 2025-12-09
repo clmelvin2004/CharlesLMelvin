@@ -1,0 +1,11 @@
+// Ensure no duplicate borders in footer
+#footer-placeholder {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+// Only one border in the copyright section
+.site-footer .copyright {
+  border-top-width: 1px !important;
+}

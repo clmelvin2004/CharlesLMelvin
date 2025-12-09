@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+venv/
+.env
+.env.local
+.env.example
+
+# Build output
+css/*.map
+
+# Editor folders and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Local scripts
+open_code.bat
+run_dev.bat

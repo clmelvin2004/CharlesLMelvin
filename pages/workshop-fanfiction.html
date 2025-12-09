@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanfiction - Charles Melvin</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="My fanfiction works across various universes and genres">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="page-main">
+        <div class="container">
+            <section class="page-header">
+                <h1>Fanfiction</h1>
+                <div class="breadcrumbs">
+                    <a href="workshop.html">Workshop</a> / <span>Fanfiction</span>
+                </div>
+            </section>
+            
+            <section class="workshop-content">
+                <div class="category-navigation">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+                    <button class="filter-btn" data-filter="scifi">Science Fiction</button>
+                    <button class="filter-btn" data-filter="drama">Drama</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Fantasy Fanfiction -->
+                    <article class="project-card" data-category="fantasy">
+                        <div class="project-image">
+                            <div class="image-placeholder">Fantasy</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>The Forgotten Spell</h2>
+                            <p class="project-category">Fantasy Fanfiction</p>
+                            <p class="project-desc">A Harry Potter universe story following a researcher who discovers an ancient spell with unexpected consequences for the wizarding world.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Harry Potter Universe</span>
+                                <span class="tech-tag">Post-Hogwarts</span>
+                                <span class="tech-tag">50,000 Words</span>
+                                <span class="tech-tag">Complete</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">Read Story</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Science Fiction Fanfiction -->
+                    <article class="project-card" data-category="scifi">
+                        <div class="project-image">
+                            <div class="image-placeholder">Sci-Fi</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Beyond the Stars</h2>
+                            <p class="project-category">Science Fiction Fanfiction</p>
+                            <p class="project-desc">A Star Trek inspired story that follows a new crew exploring uncharted territory after a wormhole disrupts established space lanes.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Star Trek Universe</span>
+                                <span class="tech-tag">Original Characters</span>
+                                <span class="tech-tag">75,000 Words</span>
+                                <span class="tech-tag">Series</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">Read Story</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Drama Fanfiction -->
+                    <article class="project-card" data-category="drama">
+                        <div class="project-image">
+                            <div class="image-placeholder">Drama</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Untold Histories</h2>
+                            <p class="project-category">Drama Fanfiction</p>
+                            <p class="project-desc">A prequel story set in the Game of Thrones universe, exploring the early days of House Targaryen and their rise to power.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Game of Thrones</span>
+                                <span class="tech-tag">Historical</span>
+                                <span class="tech-tag">100,000 Words</span>
+                                <span class="tech-tag">In Progress</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">Read Story</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Another Fantasy Fanfiction -->
+                    <article class="project-card" data-category="fantasy">
+                        <div class="project-image">
+                            <div class="image-placeholder">Fantasy</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>The Last Dragon Rider</h2>
+                            <p class="project-category">Fantasy Fanfiction</p>
+                            <p class="project-desc">Set in the world of Eragon, this story follows a forgotten dragon rider who emerges decades after the fall of Galbatorix.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Inheritance Cycle</span>
+                                <span class="tech-tag">Post-Canon</span>
+                                <span class="tech-tag">65,000 Words</span>
+                                <span class="tech-tag">Complete</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">Read Story</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../components/addComponents.js"></script>
+    <script>
+        // Simple filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide projects based on filter
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'flex';
+                        } else {
+                            if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

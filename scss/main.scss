@@ -1,0 +1,27 @@
+// Main SCSS file that imports all other modules
+
+// Variables (must be first)
+@import 'variables';
+
+// Base styles
+@import 'base';
+
+// Layout
+@import 'layout';
+
+// Components
+@import 'components';
+@import 'header';
+@import 'footer';
+
+// Pages
+@import 'home';
+@import 'contact';
+@import 'education';
+@import 'workshop';
+
+// Dark mode
+@import 'dark-mode';
+
+// Fixes - should be last to override previous styles
+@import 'fixes';

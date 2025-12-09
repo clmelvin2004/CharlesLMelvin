@@ -1,0 +1,82 @@
+// Colors
+$purple-dark: #4A148C; // Deep purple
+$purple-main: #7B1FA2; // Vibrant purple
+$purple-light: #9C27B0; // Bright purple
+
+$orange-dark: #E65100; // Deep orange
+$orange-main: #F57C00; // Vibrant orange
+$orange-light: #FF9800; // Bright orange
+
+$green-dark: #00695C; // Deep teal-green
+$green-main: #00897B; // Vibrant emerald-teal
+$green-light: #4DB6AC; // Light emerald-teal
+
+$navy-blue: #1B365D; // Navy blue for UVA
+
+$primary-color: $purple-main;
+$secondary-color: $orange-main;
+$tertiary-color: $green-main;
+$accent-color: mix($purple-light, $orange-light, 50%); // Creates a mixed accent
+$text-color: #1A1A2E; // Deep blue-black for text
+$light-text: #6D6D9C; // Muted purple-gray for secondary text
+$bg-color: #FEFEFE; // Nearly white background
+$light-bg: #F8F4FE; // Very light purple tint
+$dark-bg: $purple-dark; // Deep purple for dark sections
+$border-color: rgba($purple-light, 0.2); // Subtle purple borders
+
+// Dark mode colors
+$dark-text-color: #E8E8F5; // Light text for dark mode
+$dark-light-text: #B8B8D4; // Muted light text for dark mode
+$dark-bg-color: #0F0F1A; // Very dark background
+$dark-light-bg: #1A1A2E; // Slightly lighter dark background
+$dark-card-bg: #242444; // Dark card background
+$dark-border-color: rgba($purple-light, 0.3); // Borders for dark mode
+
+// Typography
+$font-family: 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$heading-font: 'Montserrat', sans-serif;
+$base-font-size: 16px;
+$h1-size: 3rem;
+$h2-size: 2.25rem;
+$h3-size: 1.65rem;
+$h4-size: 1.35rem;
+
+// Special Typography Effects
+$text-shadow-light: 0 2px 10px rgba($purple-light, 0.15);
+$text-shadow-medium: 0 4px 12px rgba($purple-main, 0.25);
+$text-shadow-strong: 0 6px 16px rgba($purple-dark, 0.35);
+
+// Layout
+$container-width: 1140px;
+$container-padding: 1.5rem;
+$section-spacing: 4rem;
+$border-radius: 8px;
+$card-border-radius: 12px;
+$button-border-radius: 30px;
+
+// Shadows
+$box-shadow-light: 0 4px 12px rgba($purple-dark, 0.12);
+$box-shadow-medium: 0 8px 24px rgba($purple-dark, 0.18);
+$box-shadow-strong: 0 15px 35px rgba($purple-dark, 0.25);
+$box-shadow-orange: 0 6px 18px rgba($orange-dark, 0.25);
+$box-shadow-mix: 0 8px 28px rgba(mix($purple-dark, $orange-dark, 65%), 0.22);
+
+// Breakpoints
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+
+// Transitions
+$transition-speed: 0.3s;
+$transition-speed-slow: 0.5s;
+$transition-speed-fast: 0.2s;
+$transition-ease: cubic-bezier(0.25, 0.8, 0.25, 1);
+
+// Gradient Backgrounds
+$gradient-purple: linear-gradient(135deg, $purple-dark 0%, $purple-light 100%);
+$gradient-orange: linear-gradient(135deg, $orange-dark 0%, $orange-light 100%);
+$gradient-green: linear-gradient(135deg, $green-dark 0%, $green-light 100%);
+$gradient-mix: linear-gradient(135deg, $purple-main 0%, $orange-main 100%);
+$gradient-tricolor: linear-gradient(135deg, $purple-main 0%, $green-main 50%, $orange-main 100%);
+$gradient-subtle: linear-gradient(135deg, $light-bg 0%, mix($light-bg, $purple-light, 85%) 100%);

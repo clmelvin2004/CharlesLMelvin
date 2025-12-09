@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Projects - Charles Melvin</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="My artificial intelligence and machine learning projects">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="page-main">
+        <div class="container">
+            <section class="page-header">
+                <h1>AI Projects</h1>
+                <div class="breadcrumbs">
+                    <a href="workshop.html">Workshop</a> / <span>AI</span>
+                </div>
+            </section>
+            
+            <section class="workshop-content">
+                <div class="category-navigation">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="nlp">Natural Language Processing</button>
+                    <button class="filter-btn" data-filter="cv">Computer Vision</button>
+                    <button class="filter-btn" data-filter="tools">AI Tools</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- NLP Project -->
+                    <article class="project-card" data-category="nlp">
+                        <div class="project-image">
+                            <div class="image-placeholder">NLP</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Sentiment Analysis Engine</h2>
+                            <p class="project-category">Natural Language Processing</p>
+                            <p class="project-desc">Machine learning model that analyzes text to determine sentiment and emotional content, trained on a dataset of social media posts.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">BERT</span>
+                                <span class="tech-tag">Flask API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Computer Vision Project -->
+                    <article class="project-card" data-category="cv">
+                        <div class="project-image">
+                            <div class="image-placeholder">CV</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Object Detection System</h2>
+                            <p class="project-category">Computer Vision</p>
+                            <p class="project-desc">Real-time object detection and classification system capable of identifying multiple objects in video streams with high accuracy.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">YOLO</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- AI Tools Project -->
+                    <article class="project-card" data-category="tools">
+                        <div class="project-image">
+                            <div class="image-placeholder">AI Tool</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Content Generation Assistant</h2>
+                            <p class="project-category">AI Tools</p>
+                            <p class="project-desc">AI-powered web tool that helps users generate and refine content for various purposes including blogs, social media, and marketing materials.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">OpenAI API</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Another NLP Project -->
+                    <article class="project-card" data-category="nlp">
+                        <div class="project-image">
+                            <div class="image-placeholder">NLP</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Multilingual Translation Model</h2>
+                            <p class="project-category">Natural Language Processing</p>
+                            <p class="project-desc">Neural machine translation system that can translate between multiple languages with context awareness and idiomatic expression handling.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Transformer Architecture</span>
+                                <span class="tech-tag">Hugging Face</span>
+                                <span class="tech-tag">FastAPI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../components/addComponents.js"></script>
+    <script>
+        // Simple filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide projects based on filter
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'flex';
+                        } else {
+                            if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

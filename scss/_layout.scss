@@ -1,0 +1,134 @@
+// Container
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Main content
+main {
+  min-height: calc(100vh - 200px);  // Accounts for header and footer
+  padding-top: 2rem;
+  
+  // Remove top padding for home page to allow parallax banner to touch header
+  &.home-main {
+    padding-top: 0;
+  }
+}
+
+.page-header {
+  margin-bottom: 3.5rem;
+  padding: 1.5rem 0;
+  
+  h1 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+  }
+}
+
+// Sections
+section {
+  margin-bottom: $section-spacing;
+  padding: 1.5rem 0;
+}
+
+// Grid layouts
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-medium) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.projects-grid, .certifications-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-medium) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+// Cards
+.info-card {
+  background-color: $light-bg;
+  padding: 1.5rem;
+  border-radius: $border-radius;
+  transition: background-color $transition-speed $transition-ease, border-color $transition-speed $transition-ease;
+  
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: $border-color;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    
+    .timeline-marker {
+      position: absolute;
+      left: -2rem;
+      top: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: $secondary-color;
+    }
+  }
+}

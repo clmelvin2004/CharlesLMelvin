@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Projects - Charles Melvin</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="My game development projects">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="page-main">
+        <div class="container">
+            <section class="page-header">
+                <h1>Game Projects</h1>
+                <div class="breadcrumbs">
+                    <a href="workshop.html">Workshop</a> / <span>Games</span>
+                </div>
+            </section>
+            
+            <section class="workshop-content">
+                <div class="category-navigation">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Games</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile Games</button>
+                    <button class="filter-btn" data-filter="design">Game Design</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Web Game Project -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <div class="image-placeholder">Web Game</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Puzzle Quest</h2>
+                            <p class="project-category">Web Game</p>
+                            <p class="project-desc">An interactive puzzle game with progressive difficulty levels and dynamic challenges built for web browsers.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML5 Canvas</span>
+                                <span class="tech-tag">WebGL</span>
+                                <span class="tech-tag">Three.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Mobile Game Project -->
+                    <article class="project-card" data-category="mobile">
+                        <div class="project-image">
+                            <div class="image-placeholder">Mobile Game</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Space Explorer</h2>
+                            <p class="project-category">Mobile Game</p>
+                            <p class="project-desc">A space-themed adventure game with exploration, resource management, and strategic planning elements.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Unity</span>
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">Mobile Touch Controls</span>
+                                <span class="tech-tag">2D Physics</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Game Design Project -->
+                    <article class="project-card" data-category="design">
+                        <div class="project-image">
+                            <div class="image-placeholder">Game Design</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>RPG World Concept</h2>
+                            <p class="project-category">Game Design</p>
+                            <p class="project-desc">A comprehensive game design document for an open-world RPG including character systems, world-building, and narrative design.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Game Design</span>
+                                <span class="tech-tag">Narrative Design</span>
+                                <span class="tech-tag">Systems Design</span>
+                                <span class="tech-tag">World Building</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Another Web Game -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <div class="image-placeholder">Web Game</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Strategy Commander</h2>
+                            <p class="project-category">Web Game</p>
+                            <p class="project-desc">A turn-based strategy game with multiplayer functionality, resource management, and dynamic maps.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Socket.io</span>
+                                <span class="tech-tag">Node.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../components/addComponents.js"></script>
+    <script>
+        // Simple filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide projects based on filter
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'flex';
+                        } else {
+                            if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

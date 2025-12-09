@@ -1,0 +1,168 @@
+// Education/Tutorials page specific styles
+
+.education-content {
+  .intro-text {
+    margin-bottom: 2rem;
+    max-width: 800px;
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+  
+  // Courses grid
+  .courses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    
+    @media (min-width: $breakpoint-medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .course-card {
+    background-color: $light-bg;
+    border-radius: $border-radius;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .course-image {
+      height: 200px;
+      
+      .image-placeholder {
+        height: 100%;
+      }
+    }
+    
+    .course-details {
+      padding: 1.5rem;
+      
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+      
+      .course-category {
+        color: $light-text;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+      }
+      
+      .course-desc {
+        margin-bottom: 1.25rem;
+      }
+      
+      .course-meta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+        font-size: 0.875rem;
+        color: $light-text;
+        
+        span {
+          display: flex;
+          align-items: center;
+          
+          i {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  
+  // Tutorials
+  .tutorials-list {
+    margin-bottom: 3rem;
+  }
+  
+  .tutorial-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid $border-color;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .tutorial-date {
+      color: $light-text;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+    
+    .tutorial-desc {
+      margin-bottom: 1rem;
+    }
+    
+    .tutorial-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      
+      .tag {
+        background-color: rgba($secondary-color, 0.1);
+        color: $secondary-color;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+      }
+    }
+    
+    .read-more {
+      display: inline-block;
+    }
+  }
+  
+  // Resources
+  .resources-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    
+    @media (min-width: $breakpoint-medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .resource-card {
+    background-color: $light-bg;
+    padding: 1.5rem;
+    border-radius: $border-radius;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    h3 {
+      margin-bottom: 1rem;
+      
+      i {
+        margin-right: 0.5rem;
+        color: $secondary-color;
+      }
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .btn {
+      margin: 0 auto;
+    }
+  }
+}

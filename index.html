@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Melvin - Personal Site</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Personal website of Charles Melvin">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="home-main">
+        <section class="hero parallax-banner">
+            <div class="parallax-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Charles Melvin</h1>
+                    <p class="tagline">I make stuff.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="components/addComponents.js"></script>
+    <script>
+        // Parallax effect for hero banner
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxBg = document.querySelector('.parallax-bg');
+            const heroHeight = document.querySelector('.hero').offsetHeight;
+            
+            if (parallaxBg && scrolled <= heroHeight) {
+                const speed = scrolled * 0.5;
+                parallaxBg.style.transform = `translate3d(-50%, calc(-50% + ${speed}px), 0) scale(1.1)`;
+            }
+        });
+
+        // Fade in animation for hero content
+        window.addEventListener('load', function() {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.style.opacity = '0';
+                heroContent.style.transform = 'translateY(30px)';
+                heroContent.style.transition = 'opacity 1s ease, transform 1s ease';
+                
+                setTimeout(() => {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
+                }, 300);
+            }
+        });
+    </script>
+</body>
+</html>

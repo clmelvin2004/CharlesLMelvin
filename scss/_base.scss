@@ -1,0 +1,432 @@
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: rgba($purple-main, 0.3);
+  color: $purple-dark;
+}
+
+::selection {
+  background: rgba($purple-main, 0.3);
+  color: $purple-dark;
+}
+
+html {
+  font-size: $base-font-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family;
+  color: $text-color;
+  line-height: 1.6;
+  background-color: $bg-color;
+  background-attachment: fixed;
+  transition: background-color $transition-speed $transition-ease, color $transition-speed $transition-ease;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  position: relative;
+  transition: color $transition-speed $transition-ease;
+}
+
+h1 {
+  font-size: $h1-size;
+  letter-spacing: -0.5px;
+  text-shadow: $text-shadow-medium;
+}
+
+h2 {
+  font-size: $h2-size;
+  text-shadow: $text-shadow-light;
+}
+
+h3 {
+  font-size: $h3-size;
+}
+
+h4 {
+  font-size: $h4-size;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  transition: color $transition-speed $transition-ease;
+}
+
+a {
+  color: $secondary-color;
+  text-decoration: none;
+  transition: all $transition-speed $transition-ease;
+  font-weight: 500;
+  position: relative;
+  padding: 0 2px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, $orange-light, $green-light, $purple-light);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform $transition-speed $transition-ease;
+  }
+  
+  &:hover {
+    color: $purple-main;
+    
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+  
+  &.no-decoration {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: $button-border-radius;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-speed $transition-ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  box-shadow: $box-shadow-light;
+  z-index: 1;
+  
+  // Default button styling (white background)
+  background: white;
+  color: $text-color;
+  border: 2px solid $border-color;
+  
+  &::after {
+    display: none; // Disable the standard link underline effect
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%) skewX(-15deg);
+    transition: all 0.6s $transition-ease;
+    z-index: -1;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $box-shadow-medium;
+    background: $light-bg;
+    border-color: $purple-light;
+    color: $purple-main;
+    
+    &::before {
+      transform: translateX(0) skewX(-15deg);
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &.btn-primary {
+    background: $gradient-purple;
+    color: white;
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, darken($purple-dark, 5%) 0%, $purple-main 100%);
+    }
+  }
+  
+  &.btn-secondary {
+    background: $gradient-orange;
+    color: white;
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, darken($orange-dark, 5%) 0%, $orange-main 100%);
+    }
+  }
+  
+  &.btn-tertiary {
+    background: $gradient-green;
+    color: white;
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, darken($green-dark, 5%) 0%, $green-main 100%);
+    }
+  }
+  
+  &.btn-mix {
+    background: $gradient-mix;
+    color: white;
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, $purple-dark 0%, $orange-dark 100%);
+    }
+  }
+  
+  &.btn-tricolor {
+    background: $gradient-tricolor;
+    color: white;
+    border: none;
+    
+    &:hover {
+      background: linear-gradient(135deg, $purple-dark 0%, $green-dark 50%, $orange-dark 100%);
+    }
+  }
+  
+  &.btn-white {
+    background: white;
+    color: $text-color;
+    border: 2px solid $border-color;
+    
+    &:hover {
+      background: $light-bg;
+      border-color: $purple-light;
+      color: $purple-main;
+    }
+  }
+  
+  &.btn-outline {
+    background: transparent;
+    border: 2px solid $purple-main;
+    color: $purple-main;
+    
+    &:hover {
+      background-color: rgba($purple-light, 0.1);
+    }
+    
+    &.btn-orange {
+      border-color: $orange-main;
+      color: $orange-main;
+      
+      &:hover {
+        background-color: rgba($orange-light, 0.1);
+      }
+    }
+    
+    &.btn-green {
+      border-color: $green-main;
+      color: $green-main;
+      
+      &:hover {
+        background-color: rgba($green-light, 0.1);
+      }
+    }
+  }
+  
+  &.btn-sm {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  &.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+// Forms
+input, textarea, select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid rgba($purple-light, 0.15);
+  border-radius: $border-radius;
+  font-family: $font-family;
+  font-size: 1rem;
+  transition: all $transition-speed $transition-ease;
+  background-color: rgba($light-bg, 0.5);
+  box-shadow: 0 2px 6px rgba($purple-dark, 0.05) inset;
+  
+  &:focus {
+    outline: none;
+    border-color: rgba($purple-main, 0.5);
+    box-shadow: 0 0 0 4px rgba($purple-light, 0.1);
+    background-color: white;
+  }
+  
+  &::placeholder {
+    color: $light-text;
+    opacity: 0.6;
+  }
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 0.65rem auto;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  color: $purple-dark;
+  font-size: 0.95rem;
+}
+
+// Utils
+.text-center {
+  text-align: center;
+}
+
+.text-purple {
+  color: $purple-main;
+}
+
+.text-orange {
+  color: $orange-main;
+}
+
+.text-green {
+  color: $green-main;
+}
+
+.bg-gradient-purple {
+  background: $gradient-purple;
+  color: white;
+}
+
+.bg-gradient-orange {
+  background: $gradient-orange;
+  color: white;
+}
+
+.bg-gradient-green {
+  background: $gradient-green;
+  color: white;
+}
+
+.bg-gradient-mix {
+  background: $gradient-mix;
+  color: white;
+}
+
+.bg-gradient-tricolor {
+  background: $gradient-tricolor;
+  color: white;
+}
+
+.image-placeholder {
+  background: $gradient-tricolor;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  min-height: 200px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-light;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+      rgba(255, 255, 255, 0) 40%, 
+      rgba(255, 255, 255, 0.3) 50%, 
+      rgba(255, 255, 255, 0) 60%);
+    background-size: 200% 200%;
+    animation: shimmer 2.5s infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Lists
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style-type: none;
+  padding: 0;
+  
+  li {
+    background: $gradient-subtle;
+    padding: 0.7rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: $box-shadow-light;
+    border-left: 3px solid $purple-main;
+    border-right: 3px solid $orange-main;
+    border-top: 2px solid $green-main;
+    transition: all $transition-speed $transition-ease;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $box-shadow-medium;
+      background: white;
+    }
+  }
+}

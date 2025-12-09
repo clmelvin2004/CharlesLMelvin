@@ -1,0 +1,984 @@
+// Dark mode styles
+[data-theme="dark"] {
+  // Base colors
+  color: $dark-text-color;
+  background-color: $dark-bg-color;
+  
+  // Text selection colors
+  ::-moz-selection {
+    background: rgba($purple-light, 0.3);
+    color: $dark-text-color;
+  }
+
+  ::selection {
+    background: rgba($purple-light, 0.3);
+    color: $dark-text-color;
+  }
+  
+  // Background gradient override
+  body {
+    background-color: $dark-bg-color;
+  }
+  
+  // Typography
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-text-color;
+  }
+  
+  // Make h3 elements brighter in dark mode
+  h3 {
+    color: lighten($purple-light, 15%) !important;
+  }
+  
+  p {
+    color: $dark-text-color;
+  }
+  
+  // Lists
+  ul, ol {
+    color: $dark-text-color;
+  }
+  
+  li {
+    color: $dark-text-color;
+  }
+  
+  // Links
+  a {
+    color: $orange-light;
+    
+    &:hover {
+      color: lighten($orange-light, 10%);
+    }
+  }
+  
+  // Header
+  .site-header {
+    background-color: $dark-light-bg;
+    border-bottom: 1px solid $dark-border-color;
+    
+    .logo a {
+      color: $purple-light;
+    }
+    
+    .nav-menu a {
+      color: $dark-text-color;
+      
+      &:hover, &.active {
+        color: $orange-light;
+      }
+    }
+    
+    .mobile-menu-toggle .bar {
+      background-color: $dark-text-color;
+    }
+    
+    @media (max-width: #{$breakpoint-medium - 1px}) {
+      .nav-menu {
+        background-color: $dark-bg-color;
+        border-left: 1px solid $dark-border-color;
+      }
+    }
+  }
+  
+  // Cards and backgrounds
+  .info-card,
+  .light-bg,
+  .education-info,
+  .certification-card {
+    background-color: $dark-card-bg;
+    border: 1px solid $dark-border-color;
+  }
+  
+  // Project cards
+  .project-card {
+    background-color: $dark-card-bg;
+    border: 1px solid $dark-border-color;
+    
+    .project-category {
+      color: $dark-light-text;
+    }
+    
+    .external-link {
+      color: $dark-light-text;
+      
+      &:hover {
+        color: $orange-light;
+      }
+    }
+  }
+  
+  // University details
+  .university-details {
+    .university-description {
+      color: $dark-light-text;
+    }
+  }
+  
+  // Light text elements
+  .light-text,
+  .resume-meta,
+  .issuer,
+  .issue-date,
+  .job-title {
+    color: $dark-light-text;
+  }
+  
+  // Additional education and course elements
+  .course-category,
+  .course-meta,
+  .tutorial-date,
+  .university-description,
+  .graduation-year {
+    color: $dark-light-text;
+  }
+  
+  // Workshop and project elements
+  .project-desc,
+  .breadcrumbs,
+  .breadcrumbs span {
+    color: $dark-light-text;
+  }
+  
+  .breadcrumbs a {
+    color: $purple-light;
+    
+    &:hover {
+      color: lighten($purple-light, 10%);
+    }
+  }
+  
+  // Contact elements
+  .note,
+  .contact-note {
+    color: $dark-light-text;
+  }
+  
+  .contact-intro {
+    h2 {
+      color: $purple-light;
+    }
+    
+    p {
+      color: $dark-light-text;
+    }
+  }
+  
+  // Filter buttons and navigation
+  .filter-btn {
+    color: $dark-text-color;
+    border-color: $dark-border-color;
+    
+    &:hover {
+      background-color: rgba($purple-light, 0.1);
+      border-color: $purple-light;
+    }
+    
+    &.active {
+      background-color: $purple-light;
+      border-color: $purple-light;
+      color: $dark-bg-color;
+    }
+  }
+  
+  // Tech tags and subcategory tags
+  .tech-tag,
+  .subcategory-tag,
+  .tag {
+    background-color: rgba($purple-light, 0.15);
+    color: $purple-light;
+    
+    &.tech-green {
+      background-color: rgba($green-light, 0.15);
+      color: $green-light;
+    }
+  }
+  
+  // University details header
+  .university-details h3 {
+    color: $purple-light;
+  }
+  
+  .degree {
+    color: $dark-text-color !important;
+    font-weight: 600;
+  }
+  
+  // Text utility classes
+  .text-purple {
+    color: $purple-light;
+  }
+  
+  .text-orange {
+    color: $orange-light;
+  }
+  
+  .text-green {
+    color: $green-light;
+  }
+
+  // Forms
+  input, textarea, select {
+    background-color: $dark-card-bg;
+    border-color: $dark-border-color;
+    color: $dark-text-color;
+    
+    &::placeholder {
+      color: $dark-light-text;
+    }
+    
+    &:focus {
+      border-color: $purple-light;
+      box-shadow: 0 0 0 3px rgba($purple-light, 0.2);
+    }
+  }
+
+  // Form labels
+  label {
+    color: $dark-text-color;
+  }
+  
+  // Buttons
+  .btn {
+    &:not(.btn-primary):not(.btn-secondary):not(.btn-tertiary):not(.btn-mix):not(.btn-tricolor) {
+      background-color: $dark-card-bg;
+      color: $dark-text-color;
+      border-color: $dark-border-color;
+      
+      &:hover {
+        background-color: lighten($dark-card-bg, 5%);
+        border-color: $purple-light;
+        color: $purple-light;
+      }
+    }
+    
+    &.btn-outline {
+      border-color: $purple-light;
+      color: $purple-light;
+      
+      &:hover {
+        background-color: rgba($purple-light, 0.1);
+      }
+      
+      &.btn-orange {
+        border-color: $orange-light;
+        color: $orange-light;
+        
+        &:hover {
+          background-color: rgba($orange-light, 0.1);
+        }
+      }
+      
+      &.btn-green {
+        border-color: $green-light;
+        color: $green-light;
+        
+        &:hover {
+          background-color: rgba($green-light, 0.1);
+        }
+      }
+    }
+  }
+  
+  // Resume items
+  .resume-item {
+    border-bottom-color: $dark-border-color;
+  }
+  
+  // Timeline
+  .timeline {
+    &:before {
+      background-color: $dark-border-color;
+    }
+  }
+  
+  // Contact list
+  .contact-list i {
+    color: $orange-light;
+  }
+  
+  // Workshop category cards
+  .category-card,
+  .project-category-card {
+    background-color: $dark-card-bg;
+    border: 1px solid $dark-border-color;
+    
+    &:hover {
+      box-shadow: 0 8px 25px rgba($purple-light, 0.15);
+    }
+    
+    .category-image {
+      background-color: rgba($purple-light, 0.1);
+    }
+    
+    .category-details {
+      h2 {
+        color: $dark-text-color;
+      }
+      
+      p {
+        color: $dark-light-text;
+      }
+    }
+    
+    .category-subcategories {
+      .subcategory-tag {
+        background-color: rgba($purple-light, 0.15);
+        color: $purple-light;
+      }
+    }
+  }
+  
+  // Workshop project cards
+  .project-card {
+    .project-image {
+      background-color: rgba($purple-light, 0.05);
+      
+      .image-placeholder {
+        background-color: rgba($purple-light, 0.1);
+        color: $purple-light;
+      }
+    }
+  }
+  
+  // Education elements
+  .course-card,
+  .resource-card {
+    background-color: $dark-card-bg;
+    border: 1px solid $dark-border-color;
+    
+    .course-image,
+    .project-image {
+      background-color: rgba($purple-light, 0.05);
+      
+      .image-placeholder {
+        background-color: rgba($purple-light, 0.1);
+        color: $purple-light;
+      }
+    }
+    
+    h3 i {
+      color: $orange-light;
+    }
+  }
+  
+  // Network section
+  .network-item {
+    background-color: $dark-card-bg;
+    border: 1px solid $dark-border-color;
+    
+    &:hover {
+      box-shadow: 0 8px 25px rgba($purple-light, 0.15);
+    }
+    
+    .network-image {
+      img {
+        border-color: $dark-border-color;
+      }
+    }
+    
+    .network-details {
+      h3 {
+        color: $purple-light;
+      }
+      
+      .network-role {
+        color: $orange-light;
+      }
+      
+      .network-description {
+        color: $dark-light-text;
+      }
+    }
+  }
+  
+  // Resume section
+  .resume-card {
+    background-color: $dark-card-bg;
+    border: 1px solid $dark-border-color;
+    
+    .resume-icon {
+      background-color: rgba($orange-light, 0.15);
+      color: $orange-light;
+      border-color: rgba($orange-light, 0.3);
+    }
+    
+    .resume-details {
+      h3 {
+        color: $purple-light;
+      }
+      
+      .resume-description {
+        color: $dark-text-color !important;
+      }
+      
+      .resume-meta {
+        color: $dark-light-text;
+        
+        .update-date {
+          color: $orange-light;
+        }
+      }
+    }
+  }
+  
+  // Contact method cards (simplified)
+  .contact-method {
+    background-color: $dark-card-bg;
+    border: 2px solid transparent;
+    color: $dark-text-color;
+    
+    &:hover {
+      color: $dark-text-color;
+    }
+    
+    &.email:hover {
+      border-color: $orange-light;
+      
+      .contact-icon {
+        background-color: $orange-light;
+        color: $dark-bg-color;
+      }
+    }
+    
+    &.linkedin:hover {
+      border-color: #0077b5;
+      
+      .contact-icon {
+        background-color: #0077b5;
+        color: white;
+      }
+    }
+    
+    .contact-icon {
+      background-color: rgba($orange-light, 0.15);
+      color: $orange-light;
+    }
+    
+    .contact-details {
+      h3 {
+        color: $purple-light;
+      }
+      
+      p {
+        color: $dark-text-color;
+      }
+      
+      .contact-note {
+        color: $dark-light-text;
+      }
+    }
+  }
+  
+  // Footer (already dark, but adjust for consistency)
+  .site-footer {
+    background-color: lighten($dark-bg-color, 2%);
+    border-top: 1px solid $dark-border-color;
+    
+    .theme-toggle {
+      .light-icon {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      
+      .dark-icon {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .theme-option {
+        color: $dark-text-color;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+        
+        &.active {
+          background: rgba($purple-light, 0.15);
+          color: $purple-light;
+        }
+      }
+    }
+  }
+  
+  // Hero section adjustments
+  .hero {
+    .hero-overlay {
+      background: linear-gradient(135deg, 
+        rgba($purple-dark, 0.8) 0%, 
+        rgba($purple-main, 0.6) 50%, 
+        rgba($orange-main, 0.4) 100%);
+    }
+  }
+}
+
+// Auto theme (respects system preference)
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    // Base colors
+    color: $dark-text-color;
+    background-color: $dark-bg-color;
+    
+    // Text selection colors
+    ::-moz-selection {
+      background: rgba($purple-light, 0.3);
+      color: $dark-text-color;
+    }
+
+    ::selection {
+      background: rgba($purple-light, 0.3);
+      color: $dark-text-color;
+    }
+    
+    // Background gradient override
+    body {
+      background-color: $dark-bg-color;
+    }
+    
+    // Typography
+    h1, h2, h3, h4, h5, h6 {
+      color: $dark-text-color;
+    }
+    
+    // Make h3 elements brighter in dark mode
+    h3 {
+      color: lighten($purple-light, 15%) !important;
+    }
+    
+    p {
+      color: $dark-text-color;
+    }
+    
+    // Lists
+    ul, ol {
+      color: $dark-text-color;
+    }
+    
+    li {
+      color: $dark-text-color;
+    }
+    
+    // Links
+    a {
+      color: $orange-light;
+      
+      &:hover {
+        color: lighten($orange-light, 10%);
+      }
+    }
+    
+    // Header
+    .site-header {
+      background-color: $dark-light-bg;
+      border-bottom: 1px solid $dark-border-color;
+      
+      .logo a {
+        color: $purple-light;
+      }
+      
+      .nav-menu a {
+        color: $dark-text-color;
+        
+        &:hover, &.active {
+          color: $orange-light;
+        }
+      }
+      
+      .mobile-menu-toggle .bar {
+        background-color: $dark-text-color;
+      }
+      
+      @media (max-width: #{$breakpoint-medium - 1px}) {
+        .nav-menu {
+          background-color: $dark-bg-color;
+          border-left: 1px solid $dark-border-color;
+        }
+      }
+    }
+    
+    // Cards and backgrounds
+    .info-card,
+    .light-bg,
+    .education-info,
+    .certification-card {
+      background-color: $dark-card-bg;
+      border: 1px solid $dark-border-color;
+    }
+    
+    // Project cards
+    .project-card {
+      background-color: $dark-card-bg;
+      border: 1px solid $dark-border-color;
+      
+      .project-category {
+        color: $dark-light-text;
+      }
+      
+      .external-link {
+        color: $dark-light-text;
+        
+        &:hover {
+          color: $orange-light;
+        }
+      }
+    }
+    
+    // University details
+    .university-details {
+      .university-description {
+        color: $dark-light-text;
+      }
+    }
+    
+    // Light text elements
+    .light-text,
+    .resume-meta,
+    .issuer,
+    .issue-date,
+    .job-title {
+      color: $dark-light-text;
+    }
+    
+    // Additional education and course elements
+    .course-category,
+    .course-meta,
+    .tutorial-date,
+    .university-description,
+    .graduation-year {
+      color: $dark-light-text;
+    }
+    
+    // Workshop and project elements
+    .project-desc,
+    .breadcrumbs,
+    .breadcrumbs span {
+      color: $dark-light-text;
+    }
+    
+    .breadcrumbs a {
+      color: $purple-light;
+      
+      &:hover {
+        color: lighten($purple-light, 10%);
+      }
+    }
+    
+    // Contact elements
+    .note {
+      color: $dark-light-text;
+    }
+    
+    // Filter buttons and navigation
+    .filter-btn {
+      color: $dark-text-color;
+      border-color: $dark-border-color;
+      
+      &:hover {
+        background-color: rgba($purple-light, 0.1);
+        border-color: $purple-light;
+      }
+      
+      &.active {
+        background-color: $purple-light;
+        border-color: $purple-light;
+        color: $dark-bg-color;
+      }
+    }
+    
+    // Tech tags and subcategory tags
+    .tech-tag,
+    .subcategory-tag,
+    .tag {
+      background-color: rgba($purple-light, 0.15);
+      color: $purple-light;
+      
+      &.tech-green {
+        background-color: rgba($green-light, 0.15);
+        color: $green-light;
+      }
+    }
+    
+    // University details header
+    .university-details h3 {
+      color: $purple-light;
+    }
+    
+    .degree {
+      color: $dark-text-color !important;
+      font-weight: 600;
+    }
+    
+    // Text utility classes
+    .text-purple {
+      color: $purple-light;
+    }
+    
+    .text-orange {
+      color: $orange-light;
+    }
+    
+    .text-green {
+      color: $green-light;
+    }
+
+    // Forms
+    input, textarea, select {
+      background-color: $dark-card-bg;
+      border-color: $dark-border-color;
+      color: $dark-text-color;
+      
+      &::placeholder {
+        color: $dark-light-text;
+      }
+      
+      &:focus {
+        border-color: $purple-light;
+        box-shadow: 0 0 0 3px rgba($purple-light, 0.2);
+      }
+    }
+
+    // Form labels
+    label {
+      color: $dark-text-color;
+    }
+    
+    // Buttons
+    .btn {
+      &:not(.btn-primary):not(.btn-secondary):not(.btn-tertiary):not(.btn-mix):not(.btn-tricolor) {
+        background-color: $dark-card-bg;
+        color: $dark-text-color;
+        border-color: $dark-border-color;
+        
+        &:hover {
+          background-color: lighten($dark-card-bg, 5%);
+          border-color: $purple-light;
+          color: $purple-light;
+        }
+      }
+      
+      &.btn-outline {
+        border-color: $purple-light;
+        color: $purple-light;
+        
+        &:hover {
+          background-color: rgba($purple-light, 0.1);
+        }
+        
+        &.btn-orange {
+          border-color: $orange-light;
+          color: $orange-light;
+          
+          &:hover {
+            background-color: rgba($orange-light, 0.1);
+          }
+        }
+        
+        &.btn-green {
+          border-color: $green-light;
+          color: $green-light;
+          
+          &:hover {
+            background-color: rgba($green-light, 0.1);
+          }
+        }
+      }
+    }
+    
+    // Resume items
+    .resume-item {
+      border-bottom-color: $dark-border-color;
+    }
+    
+    // Timeline
+    .timeline {
+      &:before {
+        background-color: $dark-border-color;
+      }
+    }
+    
+    // Contact list
+    .contact-list i {
+      color: $orange-light;
+    }
+    
+    // Workshop category cards
+    .category-card,
+    .project-category-card {
+      background-color: $dark-card-bg;
+      border: 1px solid $dark-border-color;
+      
+      &:hover {
+        box-shadow: 0 8px 25px rgba($purple-light, 0.15);
+      }
+      
+      .category-image {
+        background-color: rgba($purple-light, 0.1);
+      }
+      
+      .category-details {
+        h2 {
+          color: $dark-text-color;
+        }
+        
+        p {
+          color: $dark-light-text;
+        }
+      }
+      
+      .category-subcategories {
+        .subcategory-tag {
+          background-color: rgba($purple-light, 0.15);
+          color: $purple-light;
+        }
+      }
+    }
+    
+    // Workshop project cards
+    .project-card {
+      .project-image {
+        background-color: rgba($purple-light, 0.05);
+        
+        .image-placeholder {
+          background-color: rgba($purple-light, 0.1);
+          color: $purple-light;
+        }
+      }
+    }
+    
+    // Education elements
+    .course-card,
+    .resource-card {
+      background-color: $dark-card-bg;
+      border: 1px solid $dark-border-color;
+      
+      .course-image,
+      .project-image {
+        background-color: rgba($purple-light, 0.05);
+        
+        .image-placeholder {
+          background-color: rgba($purple-light, 0.1);
+          color: $purple-light;
+        }
+      }
+      
+      h3 i {
+        color: $orange-light;
+      }
+    }
+    
+    // Network section
+    .network-item {
+      background-color: $dark-card-bg;
+      border: 1px solid $dark-border-color;
+      
+      &:hover {
+        box-shadow: 0 8px 25px rgba($purple-light, 0.15);
+      }
+      
+      .network-image {
+        img {
+          border-color: $dark-border-color;
+        }
+      }
+      
+      .network-details {
+        h3 {
+          color: $purple-light;
+        }
+        
+        .network-role {
+          color: $orange-light;
+        }
+        
+        .network-description {
+          color: $dark-light-text;
+        }
+      }
+    }
+    
+    // Resume section
+    .resume-card {
+      background-color: $dark-card-bg;
+      border: 1px solid $dark-border-color;
+      
+      .resume-icon {
+        background-color: rgba($orange-light, 0.15);
+        color: $orange-light;
+        border-color: rgba($orange-light, 0.3);
+      }
+      
+      .resume-details {
+        h3 {
+          color: $purple-light;
+        }
+        
+        .resume-description {
+          color: $dark-text-color !important;
+        }
+        
+        .resume-meta {
+          color: $dark-light-text;
+          
+          .update-date {
+            color: $orange-light;
+          }
+        }
+      }
+    }
+    
+    // Contact cards
+    .contact-card {
+      background-color: $dark-card-bg;
+      border: 1px solid $dark-border-color;
+      
+      .contact-icon {
+        color: $orange-light;
+        
+        &.icon-green {
+          color: $green-light;
+        }
+      }
+    }
+    
+    // Footer (already dark, but adjust for consistency)
+    .site-footer {
+      background-color: lighten($dark-bg-color, 2%);
+      border-top: 1px solid $dark-border-color;
+      
+      .theme-toggle {
+        .light-icon {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        
+        .dark-icon {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .theme-option {
+          color: $dark-text-color;
+          
+          &:hover {
+            background: rgba(255, 255, 255, 0.05);
+          }
+          
+          &.active {
+            background: rgba($purple-light, 0.15);
+            color: $purple-light;
+          }
+        }
+      }
+    }
+    
+    // Hero section adjustments
+    .hero {
+      .hero-overlay {
+        background: linear-gradient(135deg, 
+          rgba($purple-dark, 0.8) 0%, 
+          rgba($purple-main, 0.6) 50%, 
+          rgba($orange-main, 0.4) 100%);
+      }
+    }
+  }
+}

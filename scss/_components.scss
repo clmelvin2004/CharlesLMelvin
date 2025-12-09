@@ -1,0 +1,404 @@
+// Project cards
+.project-card {
+  background-color: #fff;
+  border-radius: $border-radius;
+  overflow: hidden;
+  border: 1px solid $border-color;
+  transition: transform 0.3s, box-shadow 0.3s, background-color $transition-speed $transition-ease, border-color $transition-speed $transition-ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-image {
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .image-placeholder {
+      height: 100%;
+    }
+  }
+  
+  .project-details {
+    padding: 1.5rem;
+    
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    
+    .project-category {
+      color: $light-text;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+    
+    .project-desc {
+      margin-bottom: 1.25rem;
+    }
+    
+    .project-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+      .external-link {
+        color: $light-text;
+        font-size: 0.875rem;
+        
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+// Profile section
+.profile-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  
+  @media (min-width: $breakpoint-medium) {
+    grid-template-columns: 200px 1fr;
+    text-align: left;
+  }
+  
+  .profile-image {
+    display: flex;
+    justify-content: center;
+    
+    .image-placeholder {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      font-size: 2.5rem;
+    }
+    
+    img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  
+  .job-title {
+    color: $light-text;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Alma Mater section
+.alma-mater-section {
+  margin-bottom: 3rem;
+  
+  .education-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background-color: $light-bg;
+    padding: 2rem;
+    border-radius: $card-border-radius;
+    box-shadow: $box-shadow-light;
+    transition: background-color $transition-speed $transition-ease, border-color $transition-speed $transition-ease;
+    
+    @media (min-width: $breakpoint-medium) {
+      grid-template-columns: 150px 1fr;
+      align-items: center;
+    }
+    
+    .university-logo {
+      display: flex;
+      justify-content: center;
+      
+      @media (min-width: $breakpoint-medium) {
+        justify-content: flex-start;
+      }
+      
+      .image-placeholder {
+        width: 150px;
+        height: 150px;
+        background: $navy-blue;
+      }
+      
+      img {
+        width: 150px;
+        height: 200px;
+        object-fit: contain;
+        border-radius: $border-radius;
+        background: $navy-blue;
+        padding: 1rem;
+      }
+    }
+    
+    .university-details {
+      text-align: center;
+      
+      @media (min-width: $breakpoint-medium) {
+        text-align: left;
+      }
+      
+      h3 {
+        color: $primary-color;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .degree {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: $text-color;
+        margin-bottom: 0.5rem;
+      }
+      
+      .graduation-year {
+        color: $secondary-color;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      
+      .university-description {
+        color: $light-text;
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Network section
+.network-section {
+  margin-bottom: 3rem;
+  
+  .network-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    
+    @media (min-width: $breakpoint-medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .network-item {
+    display: flex;
+    gap: 1.5rem;
+    background-color: $light-bg;
+    padding: 1.5rem;
+    border-radius: $card-border-radius;
+    box-shadow: $box-shadow-light;
+    transition: transform $transition-speed $transition-ease, 
+                box-shadow $transition-speed $transition-ease,
+                background-color $transition-speed $transition-ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $box-shadow-medium;
+    }
+    
+    @media (max-width: #{$breakpoint-small - 1px}) {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    
+    .network-image {
+      flex-shrink: 0;
+      
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid $border-color;
+        transition: border-color $transition-speed $transition-ease;
+      }
+    }
+    
+    .network-details {
+      flex: 1;
+      
+      h3 {
+        color: $primary-color;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+      
+      .network-role {
+        color: $secondary-color;
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      .network-description {
+        color: $light-text;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Resume section (on about page)
+.resume-section {
+  
+  .resume-card {
+    background-color: $light-bg;
+    border-radius: $card-border-radius;
+    padding: 2rem;
+    box-shadow: $box-shadow-light;
+    transition: background-color $transition-speed $transition-ease, 
+                border-color $transition-speed $transition-ease;
+    
+    .resume-preview {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      
+      @media (max-width: #{$breakpoint-small - 1px}) {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+      
+      .resume-icon {
+        flex-shrink: 0;
+        width: 80px;
+        height: 80px;
+        background-color: rgba($orange-main, 0.1);
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: $orange-main;
+        border: 2px solid rgba($orange-main, 0.2);
+      }
+      
+      .resume-details {
+        flex: 1;
+        
+        h3 {
+          color: $primary-color;
+          font-size: 1.375rem;
+          margin-bottom: 0.5rem;
+          line-height: 1.3;
+        }
+        
+        .resume-description {
+          color: $text-color;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+        
+        .resume-meta {
+          color: $light-text;
+          font-size: 0.9rem;
+          
+          .update-date {
+            font-weight: 600;
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+    
+    .resume-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      
+      @media (max-width: #{$breakpoint-small - 1px}) {
+        flex-direction: column;
+      }
+      
+      .btn {
+        padding: 0.875rem 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all $transition-speed $transition-ease;
+        
+        i {
+          font-size: 0.9rem;
+        }
+        
+        &:hover {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+// Resume sections
+.resume-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $border-color;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  .resume-header {
+    margin-bottom: 1rem;
+    
+    .resume-meta {
+      color: $light-text;
+      font-style: italic;
+    }
+  }
+  
+  .resume-details {
+    padding-left: 1.25rem;
+  }
+}
+
+// Certification cards
+.certification-card {
+  background-color: $light-bg;
+  padding: 1.5rem;
+  border-radius: $border-radius;
+  
+  .issuer, .issue-date {
+    color: $light-text;
+    font-size: 0.875rem;
+  }
+}
+
+// Contact methods
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  
+  li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    
+    i {
+      margin-right: 1rem;
+      width: 1.5rem;
+      color: $secondary-color;
+    }
+  }
+}

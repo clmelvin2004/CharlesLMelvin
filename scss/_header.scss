@@ -1,0 +1,107 @@
+.site-header {
+  background-color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color $transition-speed $transition-ease, border-color $transition-speed $transition-ease;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    
+    a {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+
+  .main-nav {
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;      
+      @media (max-width: #{$breakpoint-medium - 1px}) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: $bg-color;
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        
+        &.active {
+          right: 0;
+        }
+      }
+      
+      li {        margin-left: 1.5rem;
+        
+        @media (max-width: #{$breakpoint-medium - 1px}) {
+          margin: 0;
+          padding: 1rem 0;
+          border-bottom: 1px solid $border-color;
+        }
+      }
+      
+      a {
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+        
+        &:hover, &.active {
+          color: $secondary-color;
+        }
+      }
+    }
+    
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;      cursor: pointer;
+      padding: 0.5rem;
+      
+      @media (max-width: #{$breakpoint-medium - 1px}) {
+        display: block;
+        position: relative;
+        z-index: 110;
+      }
+      
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: $text-color;
+        transition: all 0.3s;
+      }
+      
+      &.active {
+        .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        
+        .bar:nth-child(2) {
+          opacity: 0;
+        }
+        
+        .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

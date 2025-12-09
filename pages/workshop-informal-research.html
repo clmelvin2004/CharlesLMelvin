@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informal Research - Charles Melvin</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="My informal research projects and personal explorations">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="page-main">
+        <div class="container">
+            <section class="page-header">
+                <h1>Informal Research</h1>
+                <div class="breadcrumbs">
+                    <a href="workshop.html">Workshop</a> / <span>Informal Research</span>
+                </div>
+            </section>
+            
+            <section class="workshop-content">
+                <div class="category-navigation">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="conceptexploration">Concept Exploration</button>
+                    <button class="filter-btn" data-filter="selflearning">Self-Learning</button>
+                    <button class="filter-btn" data-filter="thoughtexperiments">Thought Experiments</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Concept Exploration -->
+                    <article class="project-card" data-category="conceptexploration">
+                        <div class="project-image">
+                            <div class="image-placeholder">Concept Exploration</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Decentralized Governance Models</h2>
+                            <p class="project-category">Concept Exploration</p>
+                            <p class="project-desc">An exploration of various decentralized governance models and their potential applications in digital communities.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Blockchain</span>
+                                <span class="tech-tag">DAOs</span>
+                                <span class="tech-tag">Governance</span>
+                                <span class="tech-tag">Community Management</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Self-Learning -->
+                    <article class="project-card" data-category="selflearning">
+                        <div class="project-image">
+                            <div class="image-placeholder">Self-Learning</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Quantum Computing Fundamentals</h2>
+                            <p class="project-category">Self-Learning</p>
+                            <p class="project-desc">A personal learning journey exploring quantum computing principles, algorithms, and potential applications.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Quantum Computing</span>
+                                <span class="tech-tag">Linear Algebra</span>
+                                <span class="tech-tag">Quantum Algorithms</span>
+                                <span class="tech-tag">Qiskit</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Thought Experiment -->
+                    <article class="project-card" data-category="thoughtexperiments">
+                        <div class="project-image">
+                            <div class="image-placeholder">Thought Experiment</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Alternative Economic Systems</h2>
+                            <p class="project-category">Thought Experiment</p>
+                            <p class="project-desc">A thought experiment exploring alternative economic systems and their potential impacts on society and individuals.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Economic Theory</span>
+                                <span class="tech-tag">Social Systems</span>
+                                <span class="tech-tag">Modeling</span>
+                                <span class="tech-tag">Future Studies</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Another Concept Exploration -->
+                    <article class="project-card" data-category="conceptexploration">
+                        <div class="project-image">
+                            <div class="image-placeholder">Concept Exploration</div>
+                        </div>
+                        <div class="project-details">
+                            <h2>Augmented Reality Interfaces</h2>
+                            <p class="project-category">Concept Exploration</p>
+                            <p class="project-desc">An exploration of user interface paradigms for augmented reality applications and their usability implications.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">AR/VR</span>
+                                <span class="tech-tag">UI/UX</span>
+                                <span class="tech-tag">Human-Computer Interaction</span>
+                                <span class="tech-tag">Spatial Computing</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm">View Details</a>
+                                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../components/addComponents.js"></script>
+    <script>
+        // Simple filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide projects based on filter
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'flex';
+                        } else {
+                            if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
