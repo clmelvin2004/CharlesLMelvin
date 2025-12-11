@@ -664,8 +664,67 @@
     }
     
     // Contact elements
-    .note {
+    .note,
+    .contact-note {
       color: $dark-light-text;
+    }
+    
+    .contact-intro {
+      h2 {
+        color: $purple-light;
+      }
+      
+      p {
+        color: $dark-light-text;
+      }
+    }
+    
+    // Contact method cards (simplified)
+    .contact-method {
+      background-color: $dark-card-bg;
+      border: 2px solid transparent;
+      color: $dark-text-color;
+      
+      &:hover {
+        color: $dark-text-color;
+      }
+      
+      &.email:hover {
+        border-color: $orange-light;
+        
+        .contact-icon {
+          background-color: $orange-light;
+          color: $dark-bg-color;
+        }
+      }
+      
+      &.linkedin:hover {
+        border-color: #0077b5;
+        
+        .contact-icon {
+          background-color: #0077b5;
+          color: white;
+        }
+      }
+      
+      .contact-icon {
+        background-color: rgba($orange-light, 0.15);
+        color: $orange-light;
+      }
+      
+      .contact-details {
+        h3 {
+          color: $purple-light;
+        }
+        
+        p {
+          color: $dark-text-color;
+        }
+        
+        .contact-note {
+          color: $dark-light-text;
+        }
+      }
     }
     
     // Filter buttons and navigation
